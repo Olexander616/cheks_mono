@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Cheks Monobank"
 include(":app")
- 
+include(":navigation")

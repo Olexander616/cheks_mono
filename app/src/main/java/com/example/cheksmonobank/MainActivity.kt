@@ -3,29 +3,27 @@ package com.example.cheksmonobank
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.cheksmonobank.ui.theme.CheksMonobankTheme
+import androidx.activity.enableEdgeToEdge
 
+import com.example.cheksmonobank.ui.ScaffoldFun
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.collections.immutable.persistentListOf
+
+
+val RouteTabs = persistentListOf(AppRoute.Tab.Items, AppRoute.Tab.Settings, AppRoute.Tab.Profile)
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
-            CheksMonobankTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-
-                }
-            }
+            ScaffoldFun()
         }
     }
+
 }
+
+
+
 
